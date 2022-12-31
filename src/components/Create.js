@@ -1,17 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const history = useNavigate();
   const header = { "Access-Control-Allow_Origin": "*" };
-  const handleSubmit = () => {
-    console.log('clicked')
-    axios.post("https://63a920e1f4962215b58db2d5.mockapi.io/crud-mockapi", {
-      name: name,
-      email: email,
-      header,
-    });
+
+  const handleSubmit = (e) => {
+    console.log("clicked");
+    axios
+      .post("https://63af37d3649c73f572b7f1d5.mockapi.io/crud_mockapi", {
+        name: name,
+        email: email,
+        header,
+      })
+
+      history('/read')
+      .then(() => {
+      });
   };
 
   return (
