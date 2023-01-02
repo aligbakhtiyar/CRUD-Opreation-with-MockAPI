@@ -34,7 +34,14 @@ const Read = () => {
 
   return (
     <>
-      <h2>Read Opreation</h2>
+    <div class="d-flex justify-content-between m-2" >
+    <h2>Read Opreation</h2>
+    <Link to="/">
+    <button type="button" class="btn btn-secondary">Create</button>
+    </Link>
+    
+    </div>
+      
       <table className="table">
         <thead>
           <tr>
